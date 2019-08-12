@@ -1,0 +1,30 @@
+version: '3'
+
+networks:
+  dev-network:
+
+services:
+  sql-server:
+    container_name: sql_server
+    image: mysql:8.0.2
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: testdb
+    ports:
+      # port 3306 on the container to 3308 of host OS
+      - "3308:3306"
+    networks:
+      - dev-network
+    volumes:
+      - "./SQL_Scripts:/SQL_Scripts"
+      - "./data:/var/lib/mysql"
+  
+  
+  admin:
+    container_name: db_manager
+    image: adminer
+    ports:
+      - "9000:8080"
+    networks:
+      - dev-network
+  
