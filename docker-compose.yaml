@@ -1,8 +1,43 @@
 version: '3'
 
+networks:
+  dev-network:
+
 services:
+
   WebApp:
+    build: ./application
+    image: webapp
     container_name: WebApp
-    image: my_web_app
     ports:
       - "8080:8080"
+    networks:
+      - dev-network
+    depends_on: 
+      - sql-server
+
+
+  sql-server:
+    image: mysql:8.0.2
+    container_name: database
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: testdb
+    ports:
+      # port 3306 on the container to 3308 of host OS
+      - "3306:3306"
+    networks:
+      - dev-network
+    volumes:
+      - "./database/scripts:/SQL_Scripts"
+      - "./database/data:/var/lib/mysql"
+  
+  
+  db_manager:
+    container_name: db_manager
+    image: adminer
+    ports:
+      - "9000:8080"
+    networks:
+       - dev-network
+
