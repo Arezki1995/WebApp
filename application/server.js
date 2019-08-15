@@ -1,8 +1,10 @@
 'use strict';
 
+
 const mysql = require('mysql');
 const mysqlConnection = mysql.createConnection({
-  host: 'sql-server',
+  //host: 'sql-server',
+  host: 'localhost',
   user: 'root',
   password: 'password',
   database: 'testdb'
@@ -15,21 +17,35 @@ mysqlConnection.connect((err) => {
 
 
 const express = require('express');
-
+const path = require('path');
 // Constants
 const PORT = 8080;
 const HOST = '0.0.0.0';
 
 // App
 const app = express();
-app.get('/tasks', (req, res) => {
+
+app.set('views',path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+
+app.get('/', (req, res) => {
+
+  
+  
   mysqlConnection.query('SELECT * FROM Tasks;', (err, rows, fields)=>{
       if(!err){
-        console.log(rows);
+
+        var nb =rows.length
+        res.render('index', {nb_tasks:nb, tasks:rows});  
       }else{
-        console.log('error getting rows');
+        console.log('error getting tasks');
       }
-  }); 
+
+
+  });
+  
+  
+
 });
 
 app.listen(PORT, HOST);
