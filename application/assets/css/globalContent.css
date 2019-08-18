@@ -1,0 +1,36 @@
+/****************************************************************************/
+/*******************************  MAIN CONTENT  *****************************/
+/****************************************************************************/
+.main-content-header{
+	background: white;
+	padding: 1em;
+	margin: 1em;
+	box-shadow: var(--my-shadow-style);
+	text-align: center;
+}
+
+.main-content-body{
+	padding: 1em;
+	background: var(--light-bg-color);
+
+}
+
+
+
+/****************************************************************************/
+/*******************************  SIDE CONTENT  *****************************/
+/****************************************************************************/
+.content-header{
+	background: white;
+	padding: 1em;	
+	margin: 1em;
+	margin-left: 0;
+	text-align: center;
+}
+
+.content-body{
+	padding: 1em;
+	background: white;
+	margin-right: 1em;
+	height: 100%;
+}

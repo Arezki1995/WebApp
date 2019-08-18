@@ -1,0 +1,22 @@
+extends includes/globalLayout.pug
+block main
+	link(rel="stylesheet", href="assets/css/globalContent.css")
+	div(class='main-content-header') 
+		h1 List of tasks
+	div(class='main-content-body')
+		each task, i in tasks
+			div(class='list-container')
+				h2= task.title
+				p= task.description
+
+
+block splash
+	<img class="mySlides" src="assets/images/slides/slide1.jpg">
+	<img class="mySlides" src="assets/images/slides/slide2.jpg">
+	<img class="mySlides" src="assets/images/slides/slide3.jpg">
+
+block aside
+	div(class='content-header')
+		h1 Side content header
+	div(class='content-body')
+		p side content

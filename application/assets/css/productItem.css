@@ -1,0 +1,36 @@
+.item-container{
+	padding: 1em;
+	margin-bottom: 2em;
+	background: white;
+	min-height: 200px;
+	box-shadow: var(--my-shadow-style);
+	-webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+
+.product-image{
+	float: left;
+	margin-right: 2em;
+	margin-left: 2em;
+	margin-top: 1em;
+	border: solid;
+	border-width: 2px;
+	border-color: rgb(240, 240, 240);
+	margin-bottom: 1em;
+}
+
+.product-designation{
+	margin-top: 1em;
+}
+
+.product-price{
+	color: var(--strong-green-color);
+	font-weight: bold;
+}
+
+.product-details{
+	text-align: justify;
+	margin: 2em;
+	margin-bottom: 1em;
+}
