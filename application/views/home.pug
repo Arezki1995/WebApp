@@ -1,13 +1,14 @@
 extends includes/globalLayout.pug
 block main
 	link(rel="stylesheet", href="assets/css/globalContent.css")
+	link(rel="stylesheet", href="assets/css/sideContentItems.css")
 	div(class='main-content-header') 
-		h1 List of tasks
+
 	div(class='main-content-body')
-		each task, i in tasks
-			div(class='list-container')
-				h2= task.title
-				p= task.description
+		
+		a(href="/Products" class='button') Nos produits
+		a(href="/Contact" class='button') Nous contacter
+
 
 
 block splash
@@ -16,7 +17,12 @@ block splash
 	<img class="mySlides" src="assets/images/slides/slide3.jpg">
 
 block aside
-	div(class='content-header')
-		h1 Side content header
-	div(class='content-body')
-		p side content
+	div(class='side-content-header')
+		h1 Actualité
+	div(class='side-content-body')
+		each element, i in news
+			div(class='sc-item-container')
+				h4(class='sc-item-title')= element.news_title
+				img(class='sc-item-thumbnail' src=element.news_imgUrl, alt="alt")
+				p(class='sc-item-details')= element.news_content
+

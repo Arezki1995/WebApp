@@ -7,12 +7,13 @@
 	margin: 1em;
 	box-shadow: var(--my-shadow-style);
 	text-align: center;
+	border-radius: var(--angle-roundness);
 }
 
 .main-content-body{
 	padding: 1em;
 	background: var(--light-bg-color);
-
+	border-radius: var(--angle-roundness);
 }
 
 
@@ -20,17 +21,20 @@
 /****************************************************************************/
 /*******************************  SIDE CONTENT  *****************************/
 /****************************************************************************/
-.content-header{
+.side-content-header{
 	background: white;
 	padding: 1em;	
 	margin: 1em;
 	margin-left: 0;
 	text-align: center;
+	border-radius: var(--angle-roundness);
 }
 
-.content-body{
+.side-content-body{
 	padding: 1em;
 	background: white;
 	margin-right: 1em;
-	height: 100%;
+	max-height: 800px;
+    	overflow-y: scroll;
+	border-radius: var(--angle-roundness);
 }

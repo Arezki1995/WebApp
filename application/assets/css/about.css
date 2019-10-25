@@ -1,0 +1,7 @@
+.hell{
+	display: block;
+	background: white;
+	line-height: 1.5em;
+	padding: 2em;
+	box-shadow: var(--my-shadow-style);
+}

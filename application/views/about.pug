@@ -1,10 +1,11 @@
 extends includes/globalLayout.pug
 block main
-	link(rel="stylesheet", href="css/globalContent.css")
+	link(rel="stylesheet", href="/assets/css/globalContent.css")
+	link(rel="stylesheet", href="/assets/css/about.css")
 	div(class='main-content-header') 
 		h1 About
 	div(class='main-content-body')
-		p Some words about the business
+		p(class='hell') #{aboutRow.value}
 
 block splash
 	div(style="height:var(--nav-bar-height);")

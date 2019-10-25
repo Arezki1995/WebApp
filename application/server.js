@@ -28,27 +28,31 @@ const app = express();
 app.set('views',path.join(__dirname, 'views'));
 
 app.use('/assets', express.static('assets'));
-//app.use('/products', express.static('products'));
+
 
 app.set('view engine', 'pug');
 
 app.get('/', (req, res) => {
-
-  mysqlConnection.query('SELECT * FROM Tasks;', (err, rows, fields)=>{
-      if(!err){
-
-        res.render('home', {tasks:rows});  
-      }else{
-        console.log('error getting tasks');
-      }
-
-  });
+    
+    mysqlConnection.query( 'SELECT * FROM News;', (err, rows)=>{
+      if (err) throw err;   
+      res.render('home', {news:rows});  
+    });
+ 
 });
 
 
 
 app.get('/About', (req, res) => {
-        res.render('about');  
+  mysqlConnection.query('SELECT * FROM `WebsiteData` WHERE `property` ="about";', (err, rows, fields)=>{
+    if(!err){
+      res.render('about',{aboutRow:rows[0]});   
+    }else{
+      console.log('error getting about information');
+    }
+
+});
+         
 });
 
 
