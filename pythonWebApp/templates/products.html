@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block main_content %}
+<div class="col-lg-7 col-sm-12 col-xs-12">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',
+		filename='css/productItem.css')}}">
+	<div class="content-section">
+		<div style="border-bottom: 2px solid #dddddd;">
+			<h2 style="text-align: center;">Nos produits</h2>
+		</div>
+		<div style="height: 120vh; overflow-y: scroll;">
+			{% for item in product_list %}
+			<div class="item-container">
+
+				<div class="col product-image">
+					<img src="{{url_for('static', filename='products/'+item.imgUrl)}}" alt=""
+						style="width:80%;">
+				</div>
+				<div class="col product-info-section">
+					<h2 class="product-designation">{{item.designation}}</h2>
+					<h3 class="product-price">{{"Prix: "+ "%s" % item.price +"€"}}</h3>
+					<p class="product-details">{{item.details}}</p>
+				</div>
+				<a href="/contact">
+					<div class="button">
+						<h3 style="color: white;">Commander</h3>
+					</div>
+				</a>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+{% endblock main_content %}
+
+
+{% block news_content %}
+<div class="col-lg-5 col-sm-12 col-xs-12">
+	<div class="content-section text-danger">
+		<div style="height:3em; border-bottom: 2px solid #dddddd;">
+			<h4 class="sc-section-title">News</h4>
+		</div>
+
+		<div class="container" style="height: 120vh; overflow-y: scroll;">
+			{% for post in news %}
+			<div class="sc-item-container">
+				<h4 class="sc-item-title"> {{ post.news_title}}</h4>
+				<img class="sc-item-thumbnail" src="{{url_for('static',
+					filename='images/posts/'+post.news_imgUrl)}}" alt="">
+				<p class="sc-item-details"> {{ post.news_content}}</p>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+{% endblock news_content %}

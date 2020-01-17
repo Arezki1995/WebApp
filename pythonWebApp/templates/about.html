@@ -1,0 +1,40 @@
+
+
+{% extends "layout.html" %}
+{% block main_content %}
+<div class="col-lg-6 col-sm-12 col-xs-12">
+	<div class="card">
+		<link rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',
+			filename='css/about.css')}}">
+		<img src="{{url_for('static', filename='images/other/profile.jpg')}}" alt="Tanguy REVEL">
+		<h2>Tanguy REVEL</h1>
+		<h3 class="title">CEO & Founder</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<p><button>Contact</button></p>
+	</div>
+
+</div>
+{% endblock main_content %}
+
+{% block news_content %}
+<div class="col-lg-6 col-sm-12 col-xs-12">
+	<div class="content-section text-danger">
+		<div style="height:3em; border-bottom: 2px solid #dddddd;">
+			<h2 class="sc-section-title">News</h2>
+		</div>
+
+		<div class="container" style="height: 120vh; overflow-y: scroll;">
+			{% for post in news %}
+			<div class="sc-item-container">
+				<h4 class="sc-item-title"> {{ post.news_title}}</h4>
+				<img class="sc-item-thumbnail" src="{{url_for('static',
+					filename='images/posts/'+post.news_imgUrl)}}" alt="">
+				<p class="sc-item-details"> {{ post.news_content}}</p>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+{% endblock news_content %}

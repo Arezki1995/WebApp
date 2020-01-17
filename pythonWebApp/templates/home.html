@@ -1,0 +1,64 @@
+{% extends "layout.html"%}
+{% block main_content %}
+<div class="col-lg-7 col-sm-12 col-xs-12">
+	<div class="main-container" style="text-align: center">
+		<img src="{{url_for('static', filename='images/soluAccess-logo.jpg')}}" alt=""
+			width=60%>
+	</div>
+	{% for element in WebsiteData.presentation %}
+	<div class="main-container">
+		<h2 class="presentation-title"> {{ element.title}}</h2>
+		<p class="presentation-text"> {{ element.content}}</p>
+	</div>
+
+	{% endfor %}
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+				<a href="/about" style="text-decoration:none;">
+					<div class="button">
+						<h3>Plus d'infos</h3>
+					</div>
+				</a>
+			</div>
+
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+				<a href="/products" style="text-decoration:none;">
+					<div class="button">
+						<h3>Nos produits</h3>
+					</div>
+				</a>
+			</div>
+
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+				<a href="/contact" style="text-decoration:none;">
+					<div class="button">
+						<h3>Nous contacter</h3>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock main_content%}
+
+{% block news_content %}
+<div class="col-lg-5 col-sm-12 col-xs-12">
+	<div class="content-section text-danger">
+		<div style="height:3em; border-bottom: 2px solid #dddddd;">
+			<h4 class="sc-section-title">News</h4>
+		</div>
+
+		<div class="container" style=" height: 120vh;overflow-y: scroll;">
+			{% for post in news %}
+			<div class="sc-item-container">
+				<h4 class="sc-item-title"> {{ post.news_title}}</h4>
+				<img class="sc-item-thumbnail" src="{{url_for('static',
+					filename='images/posts/'+post.news_imgUrl)}}" alt="">
+				<p class="sc-item-details"> {{ post.news_content}}</p>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+{% endblock news_content %}

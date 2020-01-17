@@ -1,0 +1,47 @@
+.sc-section-title{
+	text-align: center;
+	padding: 0.5rem;
+}
+
+.sc-item-container{
+	padding: 1rem;
+	margin-top: 2rem;
+	background: white;
+	box-shadow: var(--my-shadow-style);
+	-webkit-transition: 0.2s;
+	transition: 0.2s;
+	border-radius: 2px;
+}
+
+.sc-item-title{
+	color: rgb(22, 89, 177);
+	font-weight: bolder;
+	border-bottom: 1px solid #dddddd;
+	border-radius: 1px;
+	text-align: left;
+	font-size: 1rem;
+	border-radius: 2px;
+	padding: 1rem;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.sc-item-thumbnail{
+	width: 90%;
+	text-align: justify;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1rem;
+	margin-top: 0;
+	line-height: 1rem;
+	border-bottom: 1px solid #dddddd;
+}
+
+.sc-item-details{
+	color:#444444;
+	text-align: justify;
+	margin-left: 1rem;
+	margin-right: 1rem;
+	margin-bottom: 1rem;
+	font-size: 0.7 rem;
+}

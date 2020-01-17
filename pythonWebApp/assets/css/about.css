@@ -1,0 +1,52 @@
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);	
+	text-align: center;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+  }
+  
+  .card img{
+	margin-bottom: 2rem;
+	margin-left: auto;
+	margin-right: auto;
+	width:40%;
+	max-height: 400px;
+	text-align: center;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);	
+  }
+
+  .title {
+	color: grey;
+	font-size: 18px;
+  }
+  
+  .card p{
+	text-align: justify;
+	margin: 1.5rem;
+  }
+
+  button h3{
+	color: white; 
+  }
+  
+  button {
+	border: none;
+	outline: 0;
+	display: inline-block;
+	color: white;
+	background-color: #000;
+	text-align: center;
+	cursor: pointer;
+	width: 100%;
+	font-size: 18px;
+  }
+  
+  a {
+	text-decoration: none;
+	font-size: 22px;
+	color: black;
+  }
+  
+  button:hover, a:hover {
+	opacity: 0.7;
+  }
