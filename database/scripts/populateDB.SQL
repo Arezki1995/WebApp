@@ -15,19 +15,6 @@
 
 
 
-    INSERT INTO Tasks(title, description, priority) 
-    VALUES ('DB initialization script', 'You should create an SQL script that allows to init your database', 2);
-    
-    INSERT INTO Tasks(title, description, priority) 
-    VALUES ('CRUD functions in app', 'Write the app code to connect to your database and perform CRUD operations', 1);
-	
-    INSERT INTO Tasks(title, description, priority) 
-    VALUES ('Workout every saturday', 'You have to take care of yourself and your health so do some workout', 3);
-
-
-
-
-
     INSERT INTO `Products` (`designation`, `details`, `imgUrl`, `price`)
     VALUES ('Rampe 50cm', 'Rampe PRS238 pliable 50cm x 100cm en aluminium', 'prs238.jpg', '100');
 
@@ -38,3 +25,9 @@
 
     INSERT INTO `Products` (`designation`, `details`, `imgUrl`, `price`)
     VALUES ('Rampe 100cm', 'Rampe CWT432 pliable 100cm x 100cm fabriquée en chine', 'cwt432.jpg', '400');
+
+
+    INSERT INTO `News` (`news_id`, `news_title`, `news_content`, `news_date`, `news_imgUrl`) VALUES
+        (1,	'C\'est la rentrée ! ',	'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',	'2020-09-27 17:16:43',	'Accessibilite.jpg'),
+        (2,	'Club Marot',	'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',	'2020-09-27 17:17:13',	'clubmarot.jpg'),
+        (3,	'La petite court',	'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',	'2020-09-27 17:18:02',	'lapetitecourt.jpg');

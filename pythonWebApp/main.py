@@ -1,8 +1,18 @@
 from flask import Flask, render_template, url_for
 import mysql.connector
+
+import os
+
+ASSETS_DIR = os.path.dirname(os.path.abspath(__file__))
 app = Flask(__name__, static_folder='assets')
 
 ######################################
+
+""" from OpenSSL import SSL
+context = SSL.Context(SSL.PROTOCOL_TLSv1_2)
+context.use_privatekey_file('keystore/key.pem')
+context.use_certificate_file('keystore/cert.pem') """
+
 
 
 mydb = mysql.connector.connect(
@@ -30,6 +40,7 @@ def getWebsiteData():
 	}
 
 	return WebsiteData
+
 
 def getNews():
 	mycursor.execute("SELECT * FROM News")
@@ -80,4 +91,7 @@ def contact():
 	return render_template("contact.html", title="Contact" ,WebsiteData=WebsiteData, news=news)
 
 if __name__ == "__main__":
-	app.run(debug=True, host='0.0.0.0')
+	context = ('assets/keystore/cert.pem', 'assets/keystore/clearkey.pem')
+
+	app.run(debug=False, host='0.0.0.0', ssl_context=context)
+	
