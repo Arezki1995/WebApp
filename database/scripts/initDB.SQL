@@ -37,8 +37,15 @@ CREATE TABLE IF NOT EXISTS News (
 );
 
 
+CREATE TABLE IF NOT EXISTS presentation (
+  	`title` VARCHAR(255) NOT NULL,
+  	`text` longtext NOT NULL,
+	PRIMARY KEY (`title`)
+);
 
 
-
-INSERT INTO `WebsiteData` (`property`, `value`)
-VALUES ('about', 'SoluAccess est le Service d’Accessibilité et d’Aménagement du Réseau de Services LIBELILLE.\r\nLe Réseau LIBELILLE vous propose un accompagnement personnalisé par l’apport de divers services d’aide aux personnes à mobilité réduite, âgées ou handicapées. \r\nNotre détermination étant de rompre l’isolement, notre démarche consiste à vous informer que notre Réseau de Services intervient afin de répondre aux besoins spécifiques que vous ou votre entourage pourriez rencontrer et pour lesquels vous seriez démunis de moyens d’action.\r\nAvec SoluAccess, le Réseau LIBELILLE a la volonté de répondre également aux désirs d’Autonomie et d’Accessibilité en développant l’Aménagement de l’habitat, l’Accessibilité des bâtiments accueillant du Public et l’apport d’Aides techniques spécialisées.\r\nSoluAccess vous propose une gamme de services et de matériels destinés aussi bien à l’accessibilité au domicile, entreprises ou lieux recevant du public.');
+CREATE TABLE IF NOT EXISTS slideCaption (
+  	`title` VARCHAR(255) NOT NULL,
+  	`text` longtext NOT NULL,
+	PRIMARY KEY (`title`)
+);

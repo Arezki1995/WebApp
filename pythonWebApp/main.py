@@ -1,6 +1,5 @@
 from flask import Flask, render_template, url_for
 import mysql.connector
-import json
 app = Flask(__name__, static_folder='assets')
 
 ######################################
@@ -14,6 +13,7 @@ mydb = mysql.connector.connect(
 )
 
 
+
 mycursor = mydb.cursor(dictionary=True)
 
 def getWebsiteData():
@@ -22,6 +22,7 @@ def getWebsiteData():
 
 	mycursor.execute("SELECT * FROM slideCaption")
 	slideCaption=mycursor.fetchall()
+	print(slideCaption)
 
 	WebsiteData={
 		"presentation":presentation,

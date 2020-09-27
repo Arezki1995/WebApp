@@ -1,21 +1,18 @@
 version: '3'
 
-networks:
-  dev-network:
-
 services:
 
-  WebApp:
-    build: ./application
-    image: webapp
-    container_name: WebApp
+  web:
+    build: ./pythonWebApp/
     ports:
-      - "8080:8080"
+      - "5000:5000"
+    volumes:
+      - ./pythonWebApp:/code
     networks:
-      - dev-network
+      application_net:
+        ipv4_address: 172.18.0.3
     depends_on: 
       - sql-server
-
 
   sql-server:
     image: mysql:8.0.2
@@ -27,7 +24,8 @@ services:
       # port 3306 on the container to 3308 of host OS
       - "3306:3306"
     networks:
-      - dev-network
+      application_net:
+        ipv4_address: 172.18.0.4
     volumes:
       - "./database/scripts:/SQL_Scripts"
       - "./database/data:/var/lib/mysql"
@@ -39,5 +37,14 @@ services:
     ports:
       - "9000:8080"
     networks:
-       - dev-network
+      application_net:
+        ipv4_address: 172.18.0.5
 
+
+networks:
+  application_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.18.0.0/16
+          gateway: 172.18.0.1
